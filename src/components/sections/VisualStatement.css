@@ -1,0 +1,72 @@
+/* ============================================================
+   VUEW — BRAND STATEMENT
+   A held breath between sections: full-bleed, typographic and
+   deliberately quiet apart from the accent line.
+   ============================================================ */
+
+.statement {
+  position: relative;
+  padding-block: clamp(4.5rem, 11vw, 10rem);
+  background: var(--color-near-black);
+  border-block: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.statement::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(252, 106, 2, 0.06) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.statement__lines {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(163, 158, 156, 0.08) 1px, transparent 1px);
+  background-size: 12.5% 100%;
+  mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9) 45%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9) 45%, transparent);
+  pointer-events: none;
+}
+
+.statement__inner {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  z-index: 1;
+}
+
+.statement__text {
+  display: grid;
+  gap: 0.1em;
+  font-size: clamp(2rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--color-off-white);
+  text-wrap: balance;
+  text-shadow: 0 0 80px rgba(252, 106, 2, 0.15);
+}
+
+.statement__body {
+  max-width: 52ch;
+  font-size: var(--text-body-lg);
+  line-height: 1.75;
+  color: var(--color-light-gray);
+}
+
+.statement__signature {
+  margin-top: var(--space-md);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(252, 250, 248, 0.35);
+}

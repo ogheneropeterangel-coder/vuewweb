@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Abstract VUEW composition">
+  <defs>
+    <linearGradient id="bc-panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#25150D" />
+      <stop offset="1" stop-color="#0F0D0E" />
+    </linearGradient>
+    <pattern id="bc-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0v60" fill="none" stroke="#A39E9C" stroke-opacity="0.12" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="900" fill="#0F0D0E" />
+  <rect width="1200" height="900" fill="url(#bc-grid)" />
+
+  <circle cx="920" cy="250" r="300" fill="#FC6A02" fill-opacity="0.09" />
+
+  <g transform="translate(120 190)">
+    <rect width="640" height="440" rx="18" fill="url(#bc-panel)" stroke="#A39E9C" stroke-opacity="0.24" />
+    <rect x="40" y="44" width="120" height="10" rx="5" fill="#FC6A02" />
+    <rect x="40" y="86" width="380" height="18" rx="4" fill="#FCFAF8" fill-opacity="0.5" />
+    <rect x="40" y="120" width="300" height="18" rx="4" fill="#FCFAF8" fill-opacity="0.28" />
+
+    <g transform="translate(40 190)">
+      <rect width="150" height="150" rx="12" fill="#FCFAF8" fill-opacity="0.05" stroke="#A39E9C" stroke-opacity="0.2" />
+      <rect x="170" width="150" height="150" rx="12" fill="#FC6A02" fill-opacity="0.16" stroke="#FC6A02" stroke-opacity="0.5" />
+      <rect x="340" width="150" height="150" rx="12" fill="#FCFAF8" fill-opacity="0.05" stroke="#A39E9C" stroke-opacity="0.2" />
+    </g>
+  </g>
+
+  <g transform="translate(700 430)">
+    <rect width="360" height="300" rx="18" fill="#1A120E" stroke="#A39E9C" stroke-opacity="0.24" />
+    <g fill="#FCFAF8" fill-opacity="0.14">
+      <rect x="36" y="52" width="220" height="12" rx="6" />
+      <rect x="36" y="86" width="288" height="12" rx="6" />
+      <rect x="36" y="120" width="180" height="12" rx="6" />
+      <rect x="36" y="154" width="250" height="12" rx="6" />
+    </g>
+    <rect x="36" y="222" width="110" height="34" rx="17" fill="#FC6A02" />
+  </g>
+
+  <g stroke="#FC6A02" stroke-width="2" opacity="0.85">
+    <path d="M120 700h260" />
+    <path d="M120 730h140" stroke-opacity="0.5" />
+  </g>
+
+  <g fill="#FCFAF8" fill-opacity="0.35" font-family="Sora, sans-serif" font-size="16" letter-spacing="6">
+    <text x="120" y="790">STRUCTURE</text>
+    <text x="420" y="790">SYSTEM</text>
+    <text x="680" y="790">CRAFT</text>
+  </g>
+</svg>

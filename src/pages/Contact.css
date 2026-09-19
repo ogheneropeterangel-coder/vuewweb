@@ -1,0 +1,83 @@
+/* ============================================================
+   VUEW — CONTACT PAGE
+   ============================================================ */
+
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.contact-page__form {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.contact-page__form-title {
+  color: var(--text);
+}
+
+.contact-page__aside {
+  display: grid;
+  gap: var(--space-2xl);
+  position: sticky;
+  inset-block-start: calc(var(--nav-height) + var(--space-xl));
+}
+
+.contact-page__block {
+  display: grid;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.contact-page__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-heading);
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.contact-page__email:hover {
+  color: var(--accent);
+}
+
+.contact-page__steps {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.contact-page__steps li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+.contact-page__steps span {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.contact-page__note {
+  max-width: 40ch;
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .contact-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page__aside {
+    position: static;
+  }
+}

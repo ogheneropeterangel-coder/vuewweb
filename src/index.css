@@ -1,0 +1,14 @@
+/* ============================================================
+   VUEW — STYLE ENTRY
+   Order matters: tokens → base → components → motion.
+   Component-scoped styles are imported by their components.
+
+   Sora is loaded once, from the <link> in index.html, so it can be
+   discovered alongside the preconnect hints instead of blocking on this
+   stylesheet first.
+   ============================================================ */
+
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/components.css';
+@import './styles/animations.css';

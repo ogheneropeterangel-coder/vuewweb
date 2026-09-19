@@ -1,0 +1,99 @@
+/* ============================================================
+   VUEW — SELECTED WORK
+   Full-width editorial rows that alternate the image side so the
+   rhythm of the page changes as you scroll.
+   ============================================================ */
+
+.work__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.work__list {
+  display: grid;
+  gap: clamp(3rem, 7vw, 6rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.work__link {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.work__item:nth-child(even) .work__link {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.work__item:nth-child(even) .work__media {
+  order: 2;
+}
+
+.work__media {
+  border-radius: var(--radius-md);
+}
+
+.work__body {
+  display: grid;
+  gap: var(--space-sm);
+  align-content: center;
+}
+
+.work__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.work__index {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.work__title {
+  color: var(--text);
+}
+
+.work__summary {
+  max-width: 42ch;
+  font-size: var(--text-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.work__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-sm);
+}
+
+.work__link:hover .link-arrow {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.work__link:hover .link-arrow svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .work__link,
+  .work__item:nth-child(even) .work__link {
+    grid-template-columns: 1fr;
+  }
+
+  .work__item:nth-child(even) .work__media {
+    order: 0;
+  }
+}

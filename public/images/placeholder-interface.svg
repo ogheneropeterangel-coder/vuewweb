@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Abstract placeholder artwork for a design project">
+  <defs>
+    <pattern id="pi-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#A39E9C" stroke-opacity="0.1" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0F0D0E" />
+  <rect width="1280" height="720" fill="url(#pi-grid)" />
+  <circle cx="240" cy="140" r="240" fill="#FC6A02" fill-opacity="0.12" />
+
+  <g transform="translate(200 160)">
+    <rect width="360" height="420" rx="16" fill="#FCFAF8" fill-opacity="0.05" stroke="#A39E9C" stroke-opacity="0.22" />
+    <rect x="32" y="36" width="120" height="10" rx="5" fill="#FC6A02" />
+    <g fill="#FCFAF8" fill-opacity="0.16">
+      <rect x="32" y="78" width="296" height="10" rx="5" />
+      <rect x="32" y="104" width="220" height="10" rx="5" />
+    </g>
+    <g fill="#FCFAF8" fill-opacity="0.07" stroke="#A39E9C" stroke-opacity="0.18">
+      <rect x="32" y="152" width="296" height="72" rx="10" />
+      <rect x="32" y="240" width="296" height="72" rx="10" />
+      <rect x="32" y="328" width="296" height="56" rx="10" />
+    </g>
+  </g>
+
+  <g transform="translate(620 220)">
+    <rect width="460" height="330" rx="16" fill="#25150D" stroke="#FC6A02" stroke-opacity="0.35" />
+    <g fill="#FCFAF8" fill-opacity="0.2">
+      <rect x="36" y="40" width="200" height="12" rx="6" />
+      <rect x="36" y="70" width="150" height="12" rx="6" />
+    </g>
+    <g transform="translate(36 120)">
+      <rect width="180" height="10" rx="5" fill="#FC6A02" />
+      <rect y="26" width="388" height="10" rx="5" fill="#FCFAF8" fill-opacity="0.28" />
+      <rect y="52" width="300" height="10" rx="5" fill="#FCFAF8" fill-opacity="0.2" />
+      <rect y="78" width="340" height="10" rx="5" fill="#FCFAF8" fill-opacity="0.2" />
+      <rect y="104" width="220" height="10" rx="5" fill="#FCFAF8" fill-opacity="0.2" />
+    </g>
+    <rect x="36" y="266" width="120" height="34" rx="17" fill="#FC6A02" />
+  </g>
+
+  <g transform="translate(620 574)" fill="#FCFAF8" fill-opacity="0.06">
+    <rect width="146" height="60" rx="10" stroke="#A39E9C" stroke-opacity="0.18" />
+    <rect x="160" width="146" height="60" rx="10" stroke="#A39E9C" stroke-opacity="0.18" />
+    <rect x="320" width="140" height="60" rx="10" stroke="#A39E9C" stroke-opacity="0.18" />
+  </g>
+
+  <g fill="#FCFAF8" fill-opacity="0.4" font-family="Sora, sans-serif" font-size="15" letter-spacing="5">
+    <text x="200" y="86">PLACEHOLDER — DESIGN PROJECT</text>
+  </g>
+</svg>

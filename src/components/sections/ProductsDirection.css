@@ -1,0 +1,134 @@
+/* ============================================================
+   VUEW — PRODUCTS DIRECTION
+   A light section used deliberately for pacing. Everything inside
+   inherits the light token set from `.theme-light`.
+   ============================================================ */
+
+.products-direction {
+  background: var(--color-off-white);
+  color: #171210;
+  position: relative;
+}
+
+.products-direction::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 86, 0, 0.3) 30%,
+    rgba(214, 86, 0, 0.6) 50%,
+    rgba(214, 86, 0, 0.3) 70%,
+    transparent
+  );
+  opacity: 0.4;
+}
+
+.products-direction__head {
+  max-width: 42rem;
+}
+
+.products-direction__title {
+  margin-top: var(--space-lg);
+  color: #171210;
+  text-wrap: balance;
+}
+
+.products-direction__intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border);
+}
+
+.products-direction__intro p {
+  font-size: var(--text-body-lg);
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 44ch;
+}
+
+.products-direction__timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.products-direction__stage {
+  position: relative;
+  display: grid;
+  gap: var(--space-sm);
+  padding-top: var(--space-lg);
+  border-top: 2px solid #171210;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+
+.products-direction__stage:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-sm);
+}
+
+.products-direction__stage::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -2px;
+  inset-inline-start: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-orange);
+}
+
+.products-direction__stage-label {
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.products-direction__stage-title {
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: #171210;
+}
+
+.products-direction__stage-copy {
+  font-size: var(--text-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.products-direction__state {
+  justify-self: start;
+  margin-top: var(--space-sm);
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(214, 86, 0, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(252, 106, 2, 0.08);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b34a00;
+}
+
+.products-direction__note {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  max-width: 70ch;
+  font-size: var(--text-small);
+  color: var(--text-faint);
+}
+
+@media (max-width: 900px) {
+  .products-direction__intro,
+  .products-direction__timeline {
+    grid-template-columns: 1fr;
+  }
+}

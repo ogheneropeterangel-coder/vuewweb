@@ -1,0 +1,124 @@
+/* ============================================================
+   VUEW — APPROACH
+   Sticky heading on the left, scrolling principles on the right.
+   Collapses to a simple stacked list on small screens.
+   ============================================================ */
+
+.approach {
+  background: var(--bg-deep);
+  border-block: 1px solid var(--border);
+  position: relative;
+}
+
+.approach::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(252, 106, 2, 0.3) 30%,
+    rgba(252, 106, 2, 0.6) 50%,
+    rgba(252, 106, 2, 0.3) 70%,
+    transparent
+  );
+  opacity: 0.4;
+}
+
+.approach__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.approach__aside {
+  position: sticky;
+  inset-block-start: calc(var(--nav-height) + var(--space-xl));
+}
+
+.approach__intro {
+  margin-top: var(--space-lg);
+  max-width: 44ch;
+}
+
+.approach__rail {
+  position: relative;
+  width: 2px;
+  height: 8rem;
+  margin-top: var(--space-2xl);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.approach__rail-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: top center;
+  background: var(--accent);
+}
+
+.approach__steps {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.approach__step {
+  display: grid;
+  gap: var(--space-sm);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.approach__step:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.approach__step-index {
+  font-size: var(--text-small);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.approach__step-title {
+  color: var(--text);
+}
+
+.approach__step-subtitle {
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.approach__step-copy {
+  max-width: 52ch;
+  font-size: var(--text-small);
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.approach__detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 960px) {
+  .approach__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approach__aside {
+    position: static;
+  }
+
+  .approach__rail {
+    display: none;
+  }
+}

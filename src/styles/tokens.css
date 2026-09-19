@@ -1,0 +1,142 @@
+/* ============================================================
+    VUEW — DESIGN TOKENS
+    Single source of truth for colour, type, space and motion.
+    ============================================================ */
+
+  :root {
+  /* ---- Brand palette ------------------------------------- */
+  --color-orange: #fc6a02;
+  --color-orange-soft: #e98a4c;
+  --color-orange-glow: rgba(252, 106, 2, 0.25);
+  --color-dark-brown: #1a120e;
+  --color-deep-brown: #25150d;
+  --color-near-black: #0f0d0e;
+  --color-off-white: #fcfaf8;
+  --color-light-gray: #a39e9c;
+
+  /* Legacy aliases (kept so older class names still resolve) */
+  --color-primary: var(--color-orange);
+  --color-primary-light: var(--color-orange-soft);
+  --color-accent: var(--color-orange);
+
+  /* ---- Cinematic enhancements ---------------------------- */
+  --glow-sm: 0 0 20px rgba(252, 106, 2, 0.15);
+  --glow-md: 0 0 40px rgba(252, 106, 2, 0.12);
+  --glow-lg: 0 0 80px rgba(252, 106, 2, 0.08);
+  --glow-xl: 0 0 120px rgba(252, 106, 2, 0.06);
+  --scan-line: linear-gradient(
+    180deg,
+    transparent,
+    rgba(252, 106, 2, 0.03) 50%,
+    transparent
+  );
+  --glass-bg: rgba(15, 13, 14, 0.7);
+  --glass-border: rgba(163, 158, 156, 0.12);
+  --glass-blur: blur(20px) saturate(180%);
+  --anim-border: linear-gradient(
+    135deg,
+    var(--color-orange),
+    transparent 40%,
+    transparent 60%,
+    var(--color-orange)
+  );
+
+  /* ---- Dark theme (default) ------------------------------ */
+  --bg: var(--color-near-black);
+  --bg-deep: #0a0909;
+  --bg-raised: var(--color-deep-brown);
+  --surface: rgba(252, 250, 248, 0.03);
+  --surface-strong: rgba(252, 250, 248, 0.06);
+  --text: var(--color-off-white);
+  --text-muted: var(--color-light-gray);
+  --text-faint: rgba(252, 250, 248, 0.5);
+  --accent: var(--color-orange);
+  --accent-wash: rgba(252, 106, 2, 0.1);
+  --accent-line: rgba(252, 106, 2, 0.32);
+  --border: rgba(163, 158, 156, 0.16);
+  --border-strong: rgba(163, 158, 156, 0.34);
+  --focus: var(--color-orange);
+  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 60px rgba(252, 106, 2, 0.1);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 1px rgba(252, 106, 2, 0.1);
+
+  /* ---- Type ---------------------------------------------- */
+  --font-sans: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-display-xl: clamp(2.75rem, 8.2vw, 6.5rem);
+  --text-display-lg: clamp(2.25rem, 5.4vw, 4.25rem);
+  --text-display-md: clamp(1.75rem, 3.6vw, 3rem);
+  --text-display-sm: clamp(1.4rem, 2.4vw, 2.1rem);
+  --text-heading: clamp(1.125rem, 1.5vw, 1.375rem);
+  --text-body-lg: clamp(1.0625rem, 1.15vw, 1.1875rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.75rem;
+
+  --leading-tight: 1.04;
+  --leading-heading: 1.14;
+  --leading-body: 1.7;
+  --tracking-tight: -0.03em;
+  --tracking-label: 0.16em;
+
+  /* ---- Space --------------------------------------------- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 5rem;
+
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --section-pad: clamp(4.5rem, 9vw, 9rem);
+  --section-pad-sm: clamp(3.25rem, 6vw, 5.5rem);
+  --container: 1280px;
+  --container-narrow: 960px;
+  --measure: 68ch;
+
+  /* ---- Shape --------------------------------------------- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Motion -------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+
+  /* ---- Layers -------------------------------------------- */
+  --z-progress: 200;
+  --z-nav: 100;
+  --z-menu: 150;
+
+  --nav-height: 72px;
+}
+
+/* ---- Light theme (opt in per section) -------------------- */
+.theme-light {
+  --bg: var(--color-off-white);
+  --bg-deep: #f3ece6;
+  --bg-raised: #ffffff;
+  --surface: rgba(26, 18, 14, 0.03);
+  --surface-strong: rgba(26, 18, 14, 0.06);
+  --text: #171210;
+  --text-muted: #6b615c;
+  --text-faint: rgba(23, 18, 16, 0.55);
+  --accent: #d65600;
+  --accent-wash: rgba(214, 86, 0, 0.09);
+  --accent-line: rgba(214, 86, 0, 0.3);
+  --border: rgba(26, 18, 14, 0.14);
+  --border-strong: rgba(26, 18, 14, 0.3);
+  --focus: #b34a00;
+  --shadow-soft: 0 24px 60px rgba(26, 18, 14, 0.12);
+
+  background: var(--bg);
+  color: var(--text);
+}

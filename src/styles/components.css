@@ -1,0 +1,420 @@
+/* ============================================================
+   VUEW — COMPONENT PRIMITIVES
+   Buttons, sections, cards, prose, media frames, empty states.
+   ============================================================ */
+
+/* ---- Section rhythm -------------------------------------- */
+
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.section--tight {
+  padding-block: var(--section-pad-sm);
+}
+
+.section--raised {
+  background: var(--bg-raised);
+}
+
+.section--deep {
+  background: var(--bg-deep);
+}
+
+.section__inner {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section__head {
+  max-width: var(--measure);
+}
+
+.section__head--wide {
+  max-width: 76ch;
+}
+
+.section__title {
+  margin-top: var(--space-lg);
+}
+
+.section__lede {
+  margin-top: var(--space-lg);
+}
+
+.section__aside {
+  margin-top: var(--space-xl);
+}
+
+/* ---- Buttons --------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.9rem 1.65rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+
+  --btn-bg: transparent;
+  --btn-fg: var(--text);
+  --btn-border: var(--border-strong);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border-color: var(--btn-border);
+}
+
+.btn--primary {
+  --btn-bg: var(--color-orange);
+  --btn-fg: var(--color-near-black);
+  --btn-border: var(--color-orange);
+  font-weight: 600;
+}
+
+.btn--primary:hover {
+  --btn-bg: var(--color-orange-soft);
+  --btn-border: var(--color-orange-soft);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--text);
+  --btn-border: var(--border-strong);
+}
+
+.btn--ghost:hover {
+  --btn-border: var(--text);
+}
+
+.btn--quiet {
+  --btn-bg: transparent;
+  --btn-fg: var(--text-muted);
+  --btn-border: transparent;
+  padding-inline: 0.5rem;
+}
+
+.btn--quiet:hover {
+  --btn-fg: var(--accent);
+}
+
+.btn--lg {
+  padding: 1.1rem 2rem;
+  font-size: var(--text-body);
+}
+
+.btn--sm {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8125rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn[disabled],
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn__icon {
+  flex: none;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(3px);
+}
+
+/* ---- Text link with arrow -------------------------------- */
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 0.25rem;
+  transition:
+    color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.link-arrow:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.link-arrow svg {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+.link-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.link-back:hover {
+  color: var(--accent);
+}
+
+/* ---- Chips / labels -------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  /*
+   * A chip stays on one line while it fits, but a long label (service
+   * offerings run to a full sentence) must wrap instead of forcing its
+   * grid track — and therefore the page — wider than the viewport.
+   */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.chip--accent {
+  border-color: var(--accent-line);
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+.chip--placeholder {
+  border-style: dashed;
+  border-color: var(--border-strong);
+  color: var(--text-faint);
+}
+
+/* ---- Surfaces -------------------------------------------- */
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.rule {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+  border: 0;
+}
+
+/* ---- Media ----------------------------------------------- */
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-raised);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame--wide {
+  aspect-ratio: 16 / 9;
+}
+
+.frame--photo {
+  aspect-ratio: 4 / 3;
+}
+
+.frame--tall {
+  aspect-ratio: 3 / 4;
+}
+
+.frame--square {
+  aspect-ratio: 1 / 1;
+}
+
+.placeholder-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+}
+
+/* ---- Prose ----------------------------------------------- */
+
+.prose {
+  max-width: var(--measure);
+  color: var(--text-muted);
+}
+
+.prose > * + * {
+  margin-top: var(--space-lg);
+}
+
+.prose h2 {
+  font-size: var(--text-display-sm);
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+  margin-top: var(--space-3xl);
+}
+
+.prose h3 {
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--text);
+  margin-top: var(--space-2xl);
+}
+
+.prose ul {
+  display: grid;
+  gap: var(--space-sm);
+  padding-left: 0;
+}
+
+.prose li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.prose li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---- Definition list ------------------------------------ */
+
+.definition-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.definition-list__row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) minmax(0, 1fr);
+  gap: var(--space-lg);
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.definition-list__term {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.definition-list__value {
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+/* ---- Empty state ----------------------------------------- */
+
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-lg);
+  padding: clamp(2.5rem, 6vw, 4.5rem);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.empty__mark {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+}
+
+.empty__title {
+  font-size: var(--text-display-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+}
+
+.empty__body {
+  max-width: 52ch;
+  color: var(--text-muted);
+}
+
+/* ---- Marquee-free ticker / meta rows --------------------- */
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+.meta-row__sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}

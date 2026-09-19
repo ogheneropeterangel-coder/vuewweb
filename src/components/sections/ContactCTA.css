@@ -1,0 +1,65 @@
+/* ============================================================
+   VUEW — CLOSING CTA
+   ============================================================ */
+
+.cta-panel {
+  background: var(--bg-raised);
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-panel::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -50%;
+  inset-inline-end: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse,
+    rgba(252, 106, 2, 0.04),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cta-panel__inner {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-lg);
+  max-width: 52rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-panel__title {
+  color: var(--text);
+}
+
+.cta-panel__body {
+  max-width: 48ch;
+  font-size: var(--text-body-lg);
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.cta-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.cta-panel__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-panel__note {
+  margin-top: var(--space-md);
+  max-width: 60ch;
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+}
