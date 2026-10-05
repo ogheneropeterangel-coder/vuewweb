@@ -8,26 +8,58 @@ changed, disappeared or started blocking hotlinks.
 
 | File | Used by | Type |
 | --- | --- | --- |
-| `brand-composition.svg` | Home → brand introduction, About → story | Designed brand artwork |
-| `placeholder-website.svg` | Projects → placeholder 01, project gallery | Structural placeholder |
-| `placeholder-interface.svg` | Projects → placeholder 02, project gallery | Structural placeholder |
-| `placeholder-mobile.svg` | Projects → placeholder 03 | Structural placeholder |
+| `hero-workspace.jpg` | Home → hero backdrop (CSS) | Photograph, decorative |
+| `about-studio.jpg` | Home → brand introduction, About → story | Photograph |
+| `work-aurora-platform.jpg` | Projects → Aurora Platform, project hero | Photograph |
+| `work-aurora-detail.jpg` | Project detail → Aurora Platform gallery | Photograph |
+| `work-nexus-design-system.jpg` | Projects → Nexus Design System, project hero | Photograph |
+| `work-nexus-detail.jpg` | Project detail → Nexus Design System gallery | Photograph |
+| `work-pulse-fitness-app.jpg` | Projects → Pulse Fitness App, project hero | Photograph |
+| `work-pulse-detail.jpg` | Project detail → Pulse Fitness App gallery | Photograph |
+| `insight-modular-design.jpg` | Insights → modular design cover | Photograph |
+| `insight-edge-performance.jpg` | Insights → edge performance cover | Photograph |
+| `insight-trust.jpg` | Insights → designing for trust cover | Photograph |
+| `brand-composition.svg` | Unused, kept as an option | Designed brand artwork |
 
-`brand-composition.svg` is designed brand artwork rather than a photograph:
-it can stay if it fits the direction, or be swapped for real photography.
+Every photograph was chosen to match the section it appears in: a night
+workspace for the hero, a working studio for the company story, product and
+design detail for the case studies, infrastructure for the engineering
+insights and mobile product for the app work.
 
-## Replacing the project placeholders
+## Sources and licences
 
-The three `placeholder-*.svg` files exist so the projects experience can be
-built and reviewed before real case studies are published. When a project is
-approved for release:
+All photographs are used under licences that permit commercial use with no
+attribution required. Keep this list with the files so any image can be
+traced or re-licensed later.
 
-1. Add the real image to this folder (`.jpg`, `.webp` or `.avif`, ideally
+| File | Source | Photographer |
+| --- | --- | --- |
+| `hero-workspace.jpg` | Unsplash `bWVBCDtTRJI` | Jakub Żerdzicki |
+| `about-studio.jpg` | Pexels `5466236` | Antoni Shkraba |
+| `work-aurora-platform.jpg` | Pexels `373543` | Pexels / Pixabay contributor |
+| `work-aurora-detail.jpg` | Pexels `2881232` | Brett Sayles |
+| `work-nexus-design-system.jpg` | Unsplash `4UGmm3WRUoQ` | Compagnons |
+| `work-nexus-detail.jpg` | Pexels `33637962` | Pexels contributor |
+| `work-pulse-fitness-app.jpg` | Pexels `2818118` | Pexels contributor |
+| `work-pulse-detail.jpg` | Unsplash `yEdKzjsYObM` | Milad Fakurian |
+| `insight-modular-design.jpg` | Pexels `16131518` | Pexels contributor |
+| `insight-edge-performance.jpg` | Unsplash `klWUhr-wPJ8` | imgix |
+| `insight-trust.jpg` | Pexels `3850212` | Pexels contributor |
+
+These photographs illustrate each section. They are not captures of VUEW's
+own work, so `alt` text describes what the photograph actually shows rather
+than claiming it is project output. Replace an image with real project
+photography as soon as the work is approved for publication.
+
+## Replacing an image
+
+1. Add the new file to this folder (`.jpg`, `.webp` or `.avif`, ideally
    1600–2400px wide, compressed).
-2. Update the `image` and `imageAlt` fields for that entry in
-   `src/data/work.js`.
-3. Set `isPlaceholder: false` on the entry and replace the placeholder copy.
-4. Delete the unused placeholder file.
+2. Update the matching path in `src/data/work.js`, `src/data/insights.js` or
+   `src/data/company.js`.
+3. Write `alt` text for screen readers — `alt=""` only for decorative
+   artwork such as the hero backdrop.
+4. Add the new file to the tables above and delete the file it replaces.
 
 ## Direction for real imagery
 
@@ -36,12 +68,3 @@ architecture, technology details, creative workspaces, product design and
 thoughtful business imagery — with modern African technology contexts where
 genuinely relevant. Avoid generic laptop stock photos, unrelated technology
 clip-art and AI-generated people.
-
-## Requirements for any image added here
-
-- Appropriate rights or licence for commercial use.
-- A descriptive `alt` value written for screen readers, not for search
-  engines. Use `alt=""` only for purely decorative artwork.
-- Sensible aspect ratios — the layout uses `16:9` (wide), `4:3` (photo),
-  `3:4` (tall) and `1:1` (square) frames.
-- Compression before committing, so the cinematic feel never costs load time.

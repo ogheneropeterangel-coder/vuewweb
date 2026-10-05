@@ -94,19 +94,17 @@ export default function ProjectDetail() {
             </Reveal>
           </div>
 
-          <Reveal>
+<Reveal>
             <div className="project-detail__gallery">
-<Media
-                  src={project.image}
-                  alt={project.imageAlt}
-                  aspect="photo"
-                  priority
-                />
-                <Media
-                  src={`https://picsum.photos/seed/${project.id}-detail/800/1000`}
-                  alt={`${project.title} — detailed view`}
-                  aspect="photo"
-                />
+              <Media
+                src={project.image}
+                alt={project.imageAlt}
+                aspect="photo"
+                priority
+              />
+              {(project.gallery ?? []).map((item) => (
+                <Media key={item.src} src={item.src} alt={item.alt} aspect="photo" />
+              ))}
             </div>
           </Reveal>
 

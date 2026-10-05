@@ -21,8 +21,7 @@ export const brand = {
 };
 
 export const contactDetails = {
-  /** TODO: confirm the address that should receive project inquiries. */
-  email: 'hello@vuew.com',
+  email: 'vuewtechglobal@gmail.com',
   location: 'Nigeria',
   availability: 'Working with clients locally and remotely',
   responseNote:

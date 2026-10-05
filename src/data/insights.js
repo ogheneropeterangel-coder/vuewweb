@@ -12,7 +12,7 @@
  *     excerpt: 'One or two sentences that summarise the piece.',
  *     date: '2026-03-04',                // ISO date, formatted for display
  *     readingTime: '5 min read',
- *     cover: '/images/insight-example.svg',
+ *     cover: '/images/insight-example.jpg',
  *     coverAlt: 'Describe the image for screen readers.',
  *     body: [
  *       'First paragraph.',
@@ -29,8 +29,9 @@ export const insights = [
     excerpt: 'How component-driven architecture is reshaping the way teams build digital products at scale.',
     date: '2026-01-15',
     readingTime: '6 min read',
-    cover: 'https://picsum.photos/seed/vuew-insight1/1200/675',
-    coverAlt: 'Modular design components arranged on a grid showing reusable interface patterns',
+    cover: '/images/insight-modular-design.jpg',
+    coverAlt:
+      'Repeating geometric modules on a modern architectural facade — a physical analogy for a modular design system',
     body: ['Modular design has become essential for teams building at scale. This article explores the architectural patterns behind successful design systems.'],
   },
   {
@@ -40,8 +41,9 @@ export const insights = [
     excerpt: 'Strategies for delivering sub-second experiences across global networks without sacrificing richness.',
     date: '2025-12-03',
     readingTime: '8 min read',
-    cover: 'https://picsum.photos/seed/vuew-insight2/1200/675',
-    coverAlt: 'A server rack with glowing edge computing nodes representing distributed infrastructure',
+    cover: '/images/insight-edge-performance.jpg',
+    coverAlt:
+      'Rows of server racks in a data centre — the distributed infrastructure edge performance depends on',
     body: ['Performance is no longer optional. Users abandon sites that take more than three seconds to load. We explore the techniques that make edge-first architectures viable.'],
   },
   {
@@ -51,8 +53,8 @@ export const insights = [
     excerpt: 'The psychology behind interfaces that feel honest, reliable, and worth returning to.',
     date: '2025-10-21',
     readingTime: '5 min read',
-    cover: 'https://picsum.photos/seed/vuew-insight3/1200/675',
-    coverAlt: 'A person interacting with a secure digital interface showing trust indicators and privacy controls',
+    cover: '/images/insight-trust.jpg',
+    coverAlt: 'A hand holding a smartphone with an app interface in soft focus in an office setting',
     body: ['Trust is the invisible currency of digital products. We examine how micro-interactions, transparency cues, and consistent patterns build user confidence.'],
   },
 ];

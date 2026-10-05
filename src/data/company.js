@@ -19,8 +19,9 @@ export const companyPage = {
     { term: 'How we work', value: 'Small, senior team. Direct communication. No handoff to a crowd.' },
     { term: 'Where we work', value: 'Based in Nigeria, building for local and global clients.' },
   ],
-  cover: 'https://picsum.photos/seed/vuew-about/1200/800',
-  coverAlt: 'VUEW workspace — a modern technology studio with dual monitors, circuit boards and a cityscape view',
+  cover: '/images/about-studio.jpg',
+  coverAlt:
+    'A small team collaborating around a laptop in a bright, modern studio office',
 };
 
 export const story = {

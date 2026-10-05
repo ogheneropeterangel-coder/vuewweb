@@ -25,9 +25,15 @@ export const projects = [
     status: 'Case study',
     timeframe: 'Q3 2025',
     isPlaceholder: false,
-    image: 'https://picsum.photos/seed/vuew-web/1200/675',
+    image: '/images/work-aurora-platform.jpg',
     imageAlt:
-      'Aurora Platform — a modern web dashboard interface showing data analytics and workflow management tools',
+      'Aurora Platform — glowing blue fibre-optic strands standing in for the real-time data pipelines the platform streams',
+    gallery: [
+      {
+        src: '/images/work-aurora-detail.jpg',
+        alt: 'Aurora Platform — a network switch with connected cabling, the integration layer behind the platform modules',
+      },
+    ],
     overview: 'Aurora Platform was built to streamline enterprise workflows through a unified interface that combines real-time analytics, project management, and team collaboration into a single cohesive system.',
     challenge: 'The client needed a platform that could handle complex data pipelines while remaining intuitive for non-technical users across multiple departments.',
     approach: 'We started with deep user research, mapping workflows across departments, then designed a modular architecture that allows each team to customize their dashboard without affecting the core system.',
@@ -45,9 +51,15 @@ export const projects = [
     status: 'Case study',
     timeframe: 'Q2 2025',
     isPlaceholder: false,
-    image: 'https://picsum.photos/seed/vuew-design/1200/675',
+    image: '/images/work-nexus-design-system.jpg',
     imageAlt:
-      'Nexus Design System — a library of reusable interface components with consistent spacing, typography, and interactive states',
+      'Nexus Design System — a hand-drawn website wireframe sketched on paper beside an orange pen',
+    gallery: [
+      {
+        src: '/images/work-nexus-detail.jpg',
+        alt: 'Nexus Design System — component work in progress on a laptop in a modern studio',
+      },
+    ],
     overview: 'Nexus Design System was created to solve the fragmentation problem across three separate product teams. Each team was building components independently, leading to inconsistent experiences and duplicated effort.',
     challenge: 'The challenge was to create a design system flexible enough for diverse product needs while enforcing enough consistency to maintain a unified brand identity.',
     approach: 'We conducted a design audit across all three products, established a token-based theming system, built a component playground, and created adoption workshops for each team.',
@@ -65,9 +77,15 @@ export const projects = [
     status: 'Case study',
     timeframe: 'Q4 2025',
     isPlaceholder: false,
-    image: 'https://picsum.photos/seed/vuew-mobile/1200/675',
+    image: '/images/work-pulse-fitness-app.jpg',
     imageAlt:
-      'Pulse Fitness App — a mobile interface showing workout tracking dashboards and AI coaching recommendations on a phone screen',
+      'Pulse Fitness App — a hand holding a smartphone with app icons on screen against a dark background',
+    gallery: [
+      {
+        src: '/images/work-pulse-detail.jpg',
+        alt: 'Pulse Fitness App — a smartphone on a dark background showing the training interface',
+      },
+    ],
     overview: 'Pulse Fitness App was designed to bridge the gap between generic fitness trackers and personalized coaching. The app combines real-time biometric data with AI-driven recommendations.',
     challenge: 'Building a performant mobile app that processes real-time sensor data while delivering AI recommendations without draining the device battery.',
     approach: 'We built a native core with React Native for the UI layer, integrated health kit APIs for sensor data, and deployed a lightweight ML model for on-device AI recommendations.',
