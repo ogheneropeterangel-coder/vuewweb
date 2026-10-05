@@ -25,6 +25,25 @@ const stages = [
   { index: '04', label: 'Refine' },
 ];
 
+const heroVideoSrc =
+  'https://cdn.jiro.build/BG%20effect%20for%20Tanvir/bg-video.mp4';
+
+/**
+ * RollLabel — the visible label rolls up and out while an identical copy rolls
+ * up into its place on hover. The duplicate is aria-hidden so the label is
+ * still announced exactly once.
+ */
+function RollLabel({ children }) {
+  return (
+    <span className="hero__roll">
+      <span className="hero__roll-label">{children}</span>
+      <span className="hero__roll-label hero__roll-label--ghost" aria-hidden="true">
+        {children}
+      </span>
+    </span>
+  );
+}
+
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const heroRef = useRef(null);
@@ -72,11 +91,27 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={heroRef} aria-labelledby="hero-title">
+      <div className="hero__media" aria-hidden="true">
+        <span className="hero__media-tint" />
+        <video
+          className="hero__video"
+          src={heroVideoSrc}
+          poster="/images/hero-workspace.jpg"
+          autoPlay={!prefersReducedMotion}
+          loop
+          muted
+          playsInline
+          preload="auto"
+          tabIndex={-1}
+        />
+      </div>
+
       <motion.div
         className="hero__backdrop"
         aria-hidden="true"
         style={prefersReducedMotion ? undefined : { y: backdropY }}
       >
+        <span className="hero__scrim" />
         <span className="hero__glow" />
         <span className="hero__sweep" />
         <span className="hero__grid" />
@@ -130,11 +165,11 @@ export default function Hero() {
           </motion.p>
 
           <motion.div className="hero__actions" {...enter(0.66)}>
-            <Button to="/contact" size="lg" withArrow>
-              Start a project
+            <Button to="/contact" size="lg" withArrow className="hero__cta">
+              <RollLabel>Start a project</RollLabel>
             </Button>
-            <Button to="/projects" variant="ghost" size="lg">
-              Explore our work
+            <Button to="/projects" variant="ghost" size="lg" className="hero__cta">
+              <RollLabel>Explore our work</RollLabel>
             </Button>
           </motion.div>
         </motion.div>

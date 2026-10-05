@@ -54,6 +54,63 @@
   z-index: 1;
 }
 
+/* ---- Full-bleed background video, graded to the brand orange ----
+   The footage is desaturated to pure luminance, then blended with
+   `luminosity` against the brand-tint layer beneath it: the clip keeps its
+   motion and tonal structure while taking VueW's hue. Both layers are
+   contained inside `.hero__media`, which forms its own stacking context, so
+   the blend can never leak onto the page. */
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-near-black);
+  z-index: 0;
+}
+
+.hero__media-tint {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      115% 85% at 50% 8%,
+      rgba(252, 106, 2, 0.62) 0%,
+      rgba(233, 138, 76, 0.34) 42%,
+      rgba(26, 18, 14, 0.96) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(252, 106, 2, 0.18) 0%,
+      rgba(15, 13, 14, 0.72) 58%,
+      rgba(15, 13, 14, 0.98) 100%
+    );
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  pointer-events: none;
+  filter: grayscale(1) contrast(1.18) brightness(0.92);
+  mix-blend-mode: luminosity;
+}
+
+/* Keeps the nav and foot legible over moving footage */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 13, 14, 0.74) 0%,
+    rgba(15, 13, 14, 0.32) 38%,
+    rgba(15, 13, 14, 0.88) 100%
+  );
+}
+
 .hero__grid {
   position: absolute;
   inset: 0;
@@ -289,6 +346,39 @@
   flex-wrap: wrap;
   gap: var(--space-sm);
   margin-top: var(--space-2xl);
+}
+
+/* ---- Label roll-up hover on the hero CTAs ---- */
+
+.hero__roll {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hero__roll-label {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero__roll-label--ghost {
+  position: absolute;
+  inset: 0;
+  transform: translateY(120%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__roll-label {
+    transition: transform 500ms var(--ease-in-out);
+  }
+  .hero__cta:hover .hero__roll-label {
+    transform: translateY(-120%);
+  }
+  .hero__cta:hover .hero__roll-label--ghost {
+    transform: translateY(0);
+  }
 }
 
 .hero__visual {
