@@ -57,9 +57,9 @@ export const footerContent = {
 
 export const seo = {
   home: {
-    title: 'VUEW — Build smarter, scale further.',
+    title: 'VUEW — Tech Company in Wukari, Nigeria',
     description:
-      'VUEW is a digital technology company building websites, mobile applications, interfaces, brands and digital templates for individuals, startups and organizations.',
+      'VUEW is a tech company in Wukari, Nigeria and a global company in Nigeria building websites, mobile apps, UI/UX design and brands for clients at home and worldwide.',
   },
   about: {
     title: 'About VUEW — Technology, creativity and a long-term vision',
